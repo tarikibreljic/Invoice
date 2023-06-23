@@ -1,0 +1,944 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Neucha&family=Source+Sans+Pro:ital,wght@0,700;1,400;1,600&display=swap");
+body {
+  font-family: "Montserrat";
+  margin: 0;
+  padding: 0;
+}
+.content {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+.container-sidebar {
+  padding: 0 20px;
+  background-color: #fff;
+  width: 225px;
+  min-height: 100vh;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.17);
+}
+
+.container-main {
+  background-image: none;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+  padding: 20px 40px 10px 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn-dashboard {
+  width: 100%;
+  height: 30px;
+  background-color: #ececec;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 16px;
+  font-family: "Montserrat";
+  border-radius: 4px;
+  border: 1px solid #ececec;
+  margin-bottom: 5px;
+}
+
+.btn-add {
+  width: 100%;
+  height: 30px;
+  background-color: #1dcf77;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 14px;
+  font-family: "Montserrat";
+  border-radius: 4px;
+  border: 1px solid #1dcf77;
+  color: #fff;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.sidebar-links {
+  padding: 0 15px;
+}
+
+.sidebar-single-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #2c2c2c;
+  cursor: pointer;
+}
+
+.sidebar-links h5 {
+  color: #999;
+}
+
+.search-input {
+  width: 100%;
+  height: 40px;
+  border-radius: 7px;
+  border-bottom-right-radius: 0;
+  border: 5px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.24);
+  background-color: #fff;
+  outline-style: none;
+  position: relative;
+  /* margin-bottom: 15px; */
+}
+.search-icon {
+  position: absolute;
+  right: 225px;
+  top: 35px;
+  font-size: 20px;
+}
+.admin-mail {
+  position: absolute;
+  right: 75px;
+  top: 6px;
+  font-size: 11px;
+}
+.admin {
+  position: absolute;
+  right: 75px;
+  top: 21px;
+  font-size: 11px;
+  font-weight: 300;
+  color: #2c2c2c9f;
+}
+
+.oval {
+  position: absolute;
+  right: 35px;
+  top: 32px;
+  width: 27px;
+  height: 27px;
+  background-color: #2c2c2c;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 50%;
+  box-shadow: -1px 1px 6px 0 rgba(0, 0, 0, 0.24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.oval:hover {
+  color: #1dcf77;
+  transform: scale(1.15);
+  transition-duration: 270ms;
+}
+/* .oval-text {
+  position: relative;
+  top: 2.5px;
+  right: 0px;
+  color: #fff;
+  font-size: 14px;
+} */
+
+.hamb {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background-color: #ececec;
+  box-shadow: 4px 2px 8px 0 rgba(0, 0, 0, 0.24);
+  width: 140px;
+  height: 60px;
+  font-size: 15px;
+  padding: 10px 0 0 20px;
+  border-radius: 8px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.activeHamb {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: 200ms ease-in-out;
+}
+
+.inactiveHamb {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: 500ms ease-in-out;
+}
+
+.editProfile {
+  margin-bottom: 8px;
+  display: flex;
+  color: #2c2c2c;
+  cursor: pointer;
+}
+
+.editProfile :first-child {
+  margin-right: 7px;
+}
+
+.logout {
+  color: #2c2c2c;
+  display: flex;
+  cursor: pointer;
+}
+
+.logout :first-child {
+  margin-right: 7px;
+}
+
+.editProfile span:hover,
+.logout span:hover {
+  color: #bababa;
+  transition: 300ms;
+  transform: scale(0.93);
+}
+
+.header {
+  display: flex;
+  width: 350px;
+  margin-top: 20px;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-evenly;
+  width: 180px;
+  align-items: center;
+}
+.header-title {
+  padding-right: 10px;
+  /* flex: 1; */
+}
+
+.header-icon {
+  padding-top: 1px;
+}
+
+.granica {
+  width: 1px;
+  height: 25px;
+  border-right: solid 1px #979797;
+}
+
+.header h5 {
+  color: #1dcf77;
+}
+
+.invoices-filter {
+  display: flex;
+  gap: 10px;
+  width: 440px;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.active-btn {
+  background-color: rgba(29, 207, 119, 0.5);
+  color: #fff;
+  border-radius: 8px;
+  border: solid 2px #1dcf77;
+  height: 30px;
+  width: 90px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.inactive-btn {
+  background-color: #f9f9f9;
+  color: #1dcf77;
+  border-radius: 8px;
+  border: solid 2px #1dcf77;
+  height: 30px;
+  width: 90px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.active-btn-duzi {
+  background-color: rgba(29, 207, 119, 0.5);
+  color: #fff;
+  border-radius: 8px;
+  border: solid 2px #1dcf77;
+  height: 30px;
+  width: 160px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.inactive-btn-duzi {
+  background-color: #f9f9f9;
+  color: #1dcf77;
+  border-radius: 8px;
+  border: solid 2px #1dcf77;
+  height: 30px;
+  width: 160px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.clientCard {
+  width: 800px;
+  height: 450px;
+  padding: 2px 6px 0 40px;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
+  background-color: #fff;
+}
+
+.col6 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.clientCard form {
+  padding: 5px 12px 0 0;
+}
+
+.clientCard h3 {
+  margin-bottom: 5px;
+}
+
+.notes {
+  padding-top: 5px;
+}
+
+.notesField {
+  width: 360px;
+  height: 180px;
+  border-radius: 8px;
+  border: solid 1px #979797;
+}
+
+.lead {
+  margin-bottom: 10px;
+  margin-top: 0;
+  font-weight: 100;
+  color: #a9a9a9;
+}
+.lead span {
+  font-weight: bold;
+  color: #2e2e2e;
+}
+
+.clientCard input::placeholder {
+  color: #a9a9a9;
+}
+
+.clientCard label {
+  font-weight: bold;
+  padding-left: 2px;
+}
+
+.saveClientBtn {
+  float: right;
+  width: 180px;
+  height: 33px;
+  margin: 90px 20px 0 0;
+  border-radius: 8px;
+  border: 1px solid #1dcf77;
+  background-color: #1dcf77;
+  font-family: "Montserrat";
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.invoiceCard {
+  width: 800px;
+  height: 450px;
+  padding: 2px 46px 0 40px;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
+  background-color: #fff;
+}
+
+.invoiceCard label {
+  padding-left: 2px;
+}
+
+.invoiceCard h3 {
+  margin-bottom: 5px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.row :nth-child(2) {
+  margin-left: 10px;
+}
+
+.invoiceCard form {
+  padding: 5px 32px 0 0;
+}
+
+.companySelect {
+  width: 100%;
+  height: 30px;
+  font-size: 16px;
+  padding-left: 12px;
+  font-family: "Montserrat";
+  border-color: #979797;
+  border-radius: 8px;
+}
+
+.dateInput {
+  font-family: "Montserrat";
+  height: 29px;
+  width: 96%;
+  padding: 0 0 0 12px;
+  border-radius: 8px;
+}
+
+.payment {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+.amount input {
+  width: 92%;
+  height: 29px;
+  padding: 0 0 0 12px;
+
+  border-radius: 8px;
+  border: solid 1px #979797;
+}
+.currency select {
+  width: 100%;
+  height: 30px;
+  padding: 0 0 0 12px;
+
+  border-radius: 8px;
+  border: solid 1px #979797;
+}
+
+.invoiceFooter {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.invoiceFooter span {
+  font-size: 11px;
+}
+
+.saveInvoiceBtn {
+  height: 30px;
+  border-radius: 8px;
+  background-color: #1dcf77;
+  border: 1px solid #1dcf77;
+  font-size: 16px;
+  font-family: "Montserrat";
+  color: #fff;
+}
+
+.paid {
+  display: flex;
+  align-items: center;
+}
+
+.paid input {
+  width: 20px;
+  height: 17px;
+}
+
+.table {
+  font-size: 12px;
+  width: 780px;
+  height: 362px;
+}
+.tableDetails {
+  font-size: 12px;
+  width: 780px;
+}
+.tableDetails h3 {
+  font-size: 18px;
+}
+
+.table h3 {
+  font-size: 18px;
+}
+
+.tableRow {
+  background-color: #fff;
+  box-shadow: 0 -1px 0 0 #eceeef;
+  height: 38px;
+  display: flex;
+  cursor: pointer;
+}
+
+.tableRow-active {
+  background-color: #f6f6f6;
+  box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, 0.1);
+  height: 38px;
+  display: flex;
+}
+
+.tableHeading {
+  background-color: #fff;
+  box-shadow: 0 -1px 0 0 #eceeef;
+  height: 38px;
+  display: flex;
+  font-family: HelveticaNeue;
+  font-weight: bold;
+  text-align: start;
+}
+
+.rowElement {
+  padding: 10px 0 6px 12px;
+  /* background-color: #fff; */
+  /* box-shadow: 0 -1px 0 0 #eceeef; */
+  width: 138px;
+}
+
+.rowElement:first-child {
+  width: 50px;
+  font-family: HelveticaNeue;
+  font-weight: bold;
+}
+
+.rowElementDetailsNum {
+  width: 35px;
+  font-family: HelveticaNeue;
+  font-weight: bold;
+  padding: 10px 0 6px 12px;
+}
+
+.rowElementAction {
+  width: 80px;
+  padding: 10px 0 6px 12px;
+}
+
+.rowElementBtn {
+  width: 179px;
+  padding: 10px 0 6px 12px;
+  /* cursor: pointer; */
+}
+
+.hash {
+  width: 50px;
+
+  padding: 6px 0 6px 12px;
+  margin-top: 5px;
+}
+
+.hr {
+  width: 45%;
+  float: left;
+}
+
+.green {
+  color: #1dcf77;
+}
+
+.clientDetailsCard {
+  background-color: #fff;
+  height: 100%;
+  width: 250px;
+  padding: 6px 15px 10px 18px;
+  margin: 0 5px 0 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
+}
+
+.clientDetailsCard h5 {
+  margin: 12px 0 0 0;
+  font-size: 12px;
+}
+
+.leadhr {
+  display: block;
+  width: 100%;
+  height: 1px;
+  border-top: 1px solid #e4e4e4;
+  margin: 15px 0 15px 0;
+}
+
+.paimentDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.paimentDetailsButton {
+  background-color: #1dcf77;
+  color: #fff;
+  border: 0px;
+  border-radius: 6px;
+  height: 15px;
+  margin-top: 12px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.flexEnd {
+  text-align: end;
+}
+
+.editInvoice {
+  width: 100%;
+  height: 35px;
+  color: #fff;
+  margin: 35px 0 8px 0;
+  border-radius: 8px;
+  background-color: #1dcf77;
+  border: #1dcf77;
+  cursor: pointer;
+}
+
+.clDetailsBtns {
+  padding: 35px 0 10px 0;
+  height: 35px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.clDetailsBtns button {
+  background-color: #1dcf77;
+  color: #fff;
+  border-radius: 8px;
+  border: #1dcf77;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.details-active {
+  width: 90px;
+  height: 30px;
+  margin: 0 10px 25px 0;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 8px;
+  border: solid 2px #1dcf77;
+  background-color: rgba(29, 207, 119, 0.5);
+}
+.details-inactive {
+  width: 90px;
+  height: 30px;
+  margin: 0 10px 25px 0;
+  font-size: 12px;
+  color: #1dcf77;
+  border-radius: 8px;
+  border: solid 2px #1dcf77;
+  background-color: #f9f9f9;
+}
+
+.green-text {
+  color: #1dcf77;
+  font-weight: bold;
+}
+.red-text {
+  color: #ff967e;
+  font-weight: bold;
+}
+.markAsPaid {
+  background-color: #1dcf77;
+  border: #1dcf77;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 11px;
+  height: 18px;
+  width: 46%;
+}
+
+.paginationContainer {
+  position: absolute;
+  bottom: 40px;
+  /* margin-top: 20px; */
+  display: flex;
+}
+.paginationItem {
+  padding: 6px 12px;
+  border: solid 1px #ccc;
+  background-color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.paginationContainer :first-child {
+  padding: 6px 12px;
+  border: solid 1px #ccc;
+  background-color: #fff;
+  font-size: 14px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.paginationContainer :last-child {
+  padding: 6px 12px;
+  border: solid 1px #ccc;
+  background-color: #fff;
+  font-size: 14px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.profileContainer {
+  /* padding: 40px 0 0 0; */
+  display: grid;
+  grid-template-columns: 1fr 3fr 3fr 1fr;
+  gap: 45px;
+  background-color: #ececec;
+  height: 100vh;
+}
+.goBack {
+  background-color: transparent;
+  border: none;
+  margin: 70px auto;
+  /* width: 90px; */
+  height: 50px;
+  cursor: pointer;
+}
+
+.goBack :hover {
+  color: #1dcf77;
+  transition: 200ms;
+}
+.profileCard {
+  background-color: #f2f0f0;
+  box-shadow: 0 5px 12px 4px rgba(0, 30, 0, 0.24);
+  border-radius: 6px;
+  margin-top: 40px;
+  padding: 15px 25px 10px 25px;
+  width: 90%;
+  max-height: 350px;
+}
+
+.profileCard h6 {
+  margin: 0;
+  padding: 5px 0 0 0;
+
+  color: red;
+}
+
+.profileCard input {
+  width: 95%;
+}
+
+.userInfoTitle {
+  margin-bottom: 5px;
+  color: #1dcf77;
+}
+.userInfoHr {
+  display: block;
+  width: 100%;
+  height: 1px;
+  border-top: 1px solid #1dcf77;
+  margin: 25px 0 25px 0;
+}
+.userInfoBtns {
+  padding: 26px 0 10px 0;
+  height: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.userInfoBtns button {
+  background-color: #1dcf77;
+  color: #fff;
+  border-radius: 8px;
+  border: #1dcf77;
+  font-size: 13px;
+}
+
+.userInfoConfirmUpdate {
+  width: 65%;
+  height: 30px;
+  color: #fff;
+  margin-top: 1px;
+  border-radius: 8px;
+  background-color: #1dcf77;
+  border: #1dcf77;
+  cursor: pointer;
+  float: right;
+}
+.userInfoCancelUpdate {
+  width: 25%;
+  height: 30px;
+  color: #fff;
+  margin-top: 1px;
+  border-radius: 8px;
+  background-color: #1dcf77;
+  border: #1dcf77;
+  cursor: pointer;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+.enabled {
+  cursor: pointer;
+}
+
+.userInfoChangePass {
+  width: 65%;
+  height: 30px;
+  color: #fff;
+  margin-top: 30px;
+  border-radius: 8px;
+  background-color: #1dcf77;
+  border: #1dcf77;
+  cursor: pointer;
+  float: right;
+}
+
+.changePass {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.changePass button {
+  margin-bottom: 13px;
+  margin-top: 0;
+}
+.formDiv {
+  padding-top: 20px;
+}
+
+.bg-grey {
+  background-color: #ececec;
+}
+
+.todoContainer {
+  width: 66%;
+}
+
+.addTaskInput {
+  height: 30px;
+  font-size: 19px;
+  border-radius: 0;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+  outline: none;
+  /* outline-color: #1dcf77; */
+}
+.submitTask {
+  height: 41px;
+  background-color: #1dcf77;
+  color: white;
+  border-radius: 0;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  cursor: pointer;
+  border: 1px #1dcf77;
+  width: 15%;
+}
+
+.todoInputButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+.singleTodo {
+  background-color: rgb(41, 206, 227);
+  color: white;
+  border: 1px solid #1dcf77;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 0 20px 0 20px;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.singleTodoActive {
+  background-color: rgb(41, 225, 227);
+  transition: 350ms;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+.singleTodo p {
+  min-width: 80px;
+}
+
+.todoIcons {
+  width: 120px;
+  display: flex;
+  justify-content: space-around;
+  /* cursor: pointer; */
+}
+.todoIcons button {
+  background-color: transparent;
+  border: none;
+}
+
+.updateTodo {
+  display: flex;
+  margin-bottom: 10px;
+  height: 51px;
+}
+.updateTodo input {
+  height: 39px;
+  outline: none;
+  border-radius: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-left: 20px;
+}
+.updateTodo button {
+  width: 15%;
+  border-radius: 0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px solid #bababa;
+  color: white;
+  background-color: rgb(41, 206, 227);
+}
+
+.focusDiv span {
+  display: block;
+  font-size: 11px;
+}
+
+.correctPassInput {
+  position: relative;
+}
+
+.correctPass {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+}
+
+.location {
+  display: flex;
+  justify-content: space-between;
+}
+
+.location button {
+  height: 18px;
+  width: 100px;
+  font-size: 13px;
+  background-color: #1dcf77;
+  border: 1px solid #1dcf77;
+  border-radius: 6px;
+  color: white;
+}
+
+.mapContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.profileCardMap {
+  background-color: transparent;
+  box-shadow: 0 5px 12px 6px rgba(0, 0, 0, 0.44);
+  margin-top: 40px;
+  width: 100%;
+  max-height: 374px;
+}
+
+.amountInput {
+  width: 45%;
+  height: 10px;
+  padding-right: 0;
+  margin-top: 7px;
+  margin-bottom: 5px;
+  outline-color: #ececec;
+}
