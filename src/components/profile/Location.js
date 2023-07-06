@@ -7,7 +7,7 @@ const Location = ({ notFound, setNotFound }) => {
   const [selected, setSelected] = useState(null);
 
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: "expired",
   });
 
   const address = JSON.parse(sessionStorage.getItem("user")).updateInfo.city;

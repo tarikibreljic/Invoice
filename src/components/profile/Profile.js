@@ -26,8 +26,8 @@ const Profile = () => {
 
   const [editState, setEditState] = useState(false);
   const [changePassState, setChangePassState] = useState(false);
-  const [locationState, setLocationState] = useState(false);
-  const [notFound, setNotFound] = useState(false);
+  // const [locationState, setLocationState] = useState(false);
+  // const [notFound, setNotFound] = useState(false);
 
   let date = new Date();
   let day = date.getDate();
@@ -70,7 +70,7 @@ const Profile = () => {
                 {user.updateInfo.country}, {user.updateInfo.city},
                 {user.updateInfo.address}, {user.updateInfo.phone}
               </h5>
-              <button
+              {/* <button
                 className={`${
                   editState || changePassState ? "disabled" : "enabled"
                 }`}
@@ -78,7 +78,7 @@ const Profile = () => {
                 onClick={() => setLocationState((prev) => !prev)}
               >
                 {!locationState ? "Your Location" : "Exit Location"}
-              </button>
+              </button> */}
             </div>
           )}
 
@@ -94,19 +94,15 @@ const Profile = () => {
           </p>
           <div className="userInfoBtns">
             <button
-              className={`${
-                changePassState || locationState ? "disabled" : "enabled"
-              }`}
-              disabled={changePassState || locationState}
+              className={`${changePassState ? "disabled" : "enabled"}`}
+              disabled={changePassState}
               onClick={() => setEditState(true)}
             >
               Edit Profile
             </button>
             <button
-              className={`${
-                editState || locationState ? "disabled" : "enabled"
-              }`}
-              disabled={editState || locationState}
+              className={`${editState ? "disabled" : "enabled"}`}
+              disabled={editState}
               onClick={() => setChangePassState(true)}
             >
               Change Password
@@ -119,7 +115,7 @@ const Profile = () => {
       {changePassState && (
         <ChangePassword setChangePassState={setChangePassState} />
       )}
-      {locationState && (
+      {/* {locationState && (
         <Location notFound={notFound} setNotFound={setNotFound} />
       )}
       {notFound && locationState && (
@@ -127,7 +123,7 @@ const Profile = () => {
           <h3> Not found</h3>
           <h3>Check if your city is correct</h3>
         </div>
-      )}
+      )} */}
 
       {/* {contextHolder} */}
     </div>

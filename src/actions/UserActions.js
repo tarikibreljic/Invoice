@@ -35,9 +35,15 @@ export const setUserInfo = () => async (dispatch) => {
 
     const res = await fetch(`/clients?userEmail=${currUser.email}`);
     const clientsData = await res.json();
-    console.log(clientsData);
+
     const clientsArr = clientsData.map((cl) => cl.invDetails.allAmounts);
-    const totalAmount = clientsArr.reduce((acc, curr) => acc + curr);
+
+    let totalAmount;
+    if (clientsArr.length > 0) {
+      totalAmount = clientsArr.reduce((acc, curr) => acc + curr);
+    } else {
+      totalAmount = 0;
+    }
 
     const res2 = await fetch(
       `/invoices?clientDetails.userEmail=${currUser.email}`
@@ -48,14 +54,17 @@ export const setUserInfo = () => async (dispatch) => {
 
     const paidArr = paid_unpaidArr.filter((el) => el === true);
 
-    const percentage = Math.floor(
-      (paidArr.length * 100) / paid_unpaidArr.length
-    );
+    let percentage;
+    if (paid_unpaidArr.length > 0) {
+      percentage = Math.floor((paidArr.length * 100) / paid_unpaidArr.length);
+    } else {
+      percentage = 0;
+    }
 
-    console.log(clientsData.length);
-    console.log(invoicesData.length);
-    console.log(percentage);
-    console.log(totalAmount);
+    // console.log(clientsData.length);
+    // console.log(invoicesData.length);
+    // console.log(percentage);
+    // console.log(totalAmount);
 
     const userInfo = {
       clientsNum: clientsData.length,
